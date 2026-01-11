@@ -241,7 +241,56 @@ Capacidade de identificar e resolver problemas complexos:
 
 ---
 
-## 📫 Contato
+## � Deploy no Railway
+
+### Configuração Rápida
+
+1. **Fork do repositório** ou conecte seu repo no Railway
+2. **Crie um novo projeto** no Railway Dashboard
+3. **Adicione as variáveis de ambiente**:
+
+```bash
+# Obrigatórias
+NODE_ENV=production
+PORT=3001
+
+# Firebase (copie do seu projeto Firebase)
+FIREBASE_PROJECT_ID=seu-projeto-id
+FIREBASE_DATABASE_URL=https://seu-projeto.firebaseio.com
+```
+
+4. O deploy é automático via Nixpacks!
+
+### Deploy Manual
+
+```bash
+# Instalar dependências
+npm run install:all
+
+# Build do frontend
+cd frontend && npm run build
+
+# Copiar build para backend
+mkdir -p ../backend/public
+cp -r dist/* ../backend/public/
+
+# Iniciar servidor
+cd ../backend && npm start
+```
+
+### Docker (Alternativo)
+
+```bash
+# Build da imagem
+docker build -t portfolio-sousa .
+
+# Executar container
+docker run -p 3001:3001 --env-file backend/.env portfolio-sousa
+```
+
+---
+
+## �📫 Contato
 
 - 📧 **Email**: lucas@exemplo.com
 - 💼 **LinkedIn**: [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil)

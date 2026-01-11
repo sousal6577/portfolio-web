@@ -1,0 +1,1103 @@
+/* ============================================================================
+   MODA STYLE - Sistema para Loja de Roupas
+   ============================================================================ */
+
+.moda-page {
+  min-height: 100vh;
+  background: var(--bg-primary, #fafafa);
+  color: var(--text-primary, #1a1a1a);
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+.moda-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+}
+
+[data-theme="dark"] .moda-header {
+  background: rgba(15, 23, 42, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.moda-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary, #1a1a1a);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .moda-back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.moda-back-btn:hover {
+  background: #ec4899;
+  color: white;
+}
+
+.moda-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--text-primary, #1a1a1a);
+}
+
+.moda-logo-icon {
+  font-size: 1.8rem;
+}
+
+.moda-logo strong {
+  font-weight: 700;
+  color: #ec4899;
+}
+
+.moda-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary, #f5f5f5);
+  border-radius: 30px;
+  flex: 1;
+  max-width: 400px;
+}
+
+[data-theme="dark"] .moda-search {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.moda-search svg {
+  color: var(--text-secondary, #666);
+}
+
+.moda-search input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  color: var(--text-primary, #1a1a1a);
+  outline: none;
+}
+
+.moda-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.moda-icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary, #1a1a1a);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .moda-icon-btn {
+  color: #fff;
+}
+
+.moda-icon-btn:hover {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+.moda-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ec4899;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 9px;
+  padding: 0 4px;
+}
+
+/* ============================================================================
+   Hero
+   ============================================================================ */
+.moda-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.moda-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.moda-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moda-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+}
+
+.moda-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.moda-hero-text {
+  max-width: 600px;
+}
+
+.moda-promo-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ec4899;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+}
+
+.moda-hero-text h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.moda-hero-text h1 br + * {
+  font-weight: 700;
+}
+
+.moda-hero-text p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.moda-hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.moda-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #ec4899;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moda-btn-primary:hover {
+  background: #db2777;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+}
+
+.moda-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.moda-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+/* ============================================================================
+   Features Strip
+   ============================================================================ */
+.moda-features-strip {
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 0;
+}
+
+[data-theme="dark"] .moda-features-strip {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.moda-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.moda-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.moda-feature-item svg {
+  color: #ec4899;
+  flex-shrink: 0;
+}
+
+.moda-feature-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.moda-feature-item strong {
+  font-size: 0.95rem;
+  color: var(--text-primary, #1a1a1a);
+}
+
+.moda-feature-item span {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #666);
+}
+
+/* ============================================================================
+   Catalog
+   ============================================================================ */
+.moda-catalog {
+  padding: 4rem 0;
+}
+
+.moda-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.moda-section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #1a1a1a);
+}
+
+.moda-section-header p {
+  color: var(--text-secondary, #666);
+  font-size: 1.1rem;
+}
+
+/* Filters */
+.moda-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.moda-categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.moda-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .moda-cat-btn {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-cat-btn:hover,
+.moda-cat-btn.active {
+  background: #ec4899;
+  color: white;
+  border-color: #ec4899;
+}
+
+.moda-view-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.moda-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .moda-filter-btn {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-filter-btn:hover {
+  border-color: #ec4899;
+  color: #ec4899;
+}
+
+.moda-view-toggle {
+  display: flex;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .moda-view-toggle {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-view-toggle button {
+  padding: 0.6rem 0.8rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moda-view-toggle button.active {
+  background: #ec4899;
+  color: white;
+}
+
+/* Products Grid */
+.moda-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.moda-products-grid.list {
+  grid-template-columns: 1fr;
+}
+
+.moda-products-grid.list .moda-product-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.moda-product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .moda-product-card {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.moda-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.15);
+}
+
+.moda-product-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.moda-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.moda-product-card:hover .moda-product-image img {
+  transform: scale(1.05);
+}
+
+.moda-new-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.75rem;
+  background: #22c55e;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.moda-sale-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.75rem;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.moda-fav-btn {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.moda-product-card:hover .moda-fav-btn {
+  opacity: 1;
+}
+
+.moda-fav-btn:hover,
+.moda-fav-btn.active {
+  color: #ec4899;
+  transform: scale(1.1);
+}
+
+.moda-quick-add {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.moda-product-card:hover .moda-quick-add {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.moda-quick-add:hover {
+  background: #ec4899;
+  color: white;
+}
+
+.moda-product-info {
+  padding: 1.25rem;
+}
+
+.moda-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.moda-product-rating span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary, #1a1a1a);
+}
+
+.moda-reviews {
+  color: var(--text-secondary, #666) !important;
+  font-weight: 400 !important;
+}
+
+.moda-product-info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary, #1a1a1a);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.moda-product-sizes {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.moda-size {
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-secondary, #f5f5f5);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: var(--text-secondary, #666);
+}
+
+[data-theme="dark"] .moda-size {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.moda-size-more {
+  padding: 0.2rem 0.5rem;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: #ec4899;
+}
+
+.moda-product-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.moda-price-original {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  text-decoration: line-through;
+}
+
+.moda-price-current {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ec4899;
+}
+
+/* ============================================================================
+   Stats
+   ============================================================================ */
+.moda-stats {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+.moda-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.moda-stat-card {
+  text-align: center;
+  color: white;
+}
+
+.moda-stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.moda-stat-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ============================================================================
+   CTA
+   ============================================================================ */
+.moda-cta {
+  padding: 5rem 0;
+}
+
+.moda-cta-content {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+[data-theme="dark"] .moda-cta-content {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.moda-cta-text h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.moda-cta-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.moda-cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.moda-cta-primary {
+  padding: 1rem 2rem;
+  background: #ec4899;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.moda-cta-primary:hover {
+  background: #db2777;
+  transform: scale(1.05);
+}
+
+.moda-cta-secondary {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.moda-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* ============================================================================
+   Cart Sidebar
+   ============================================================================ */
+.moda-cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+.moda-cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 420px;
+  max-width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .moda-cart-sidebar {
+  background: #1e293b;
+}
+
+.moda-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .moda-cart-header {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-cart-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary, #1a1a1a);
+}
+
+.moda-cart-header button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary, #f5f5f5);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moda-cart-header button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.moda-cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.moda-cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+  color: var(--text-secondary, #666);
+}
+
+.moda-cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary, #f8f8f8);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .moda-cart-item {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.moda-cart-item img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.moda-cart-item-info {
+  flex: 1;
+}
+
+.moda-cart-item-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary, #1a1a1a);
+  margin-bottom: 0.25rem;
+}
+
+.moda-cart-item-details {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #666);
+  margin-bottom: 0.5rem;
+}
+
+.moda-cart-item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ec4899;
+}
+
+.moda-cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.moda-qty-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+[data-theme="dark"] .moda-qty-control {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.moda-qty-control button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary, #f5f5f5);
+  border: none;
+  border-radius: 6px;
+  color: var(--text-primary, #1a1a1a);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moda-qty-control button:hover {
+  background: #ec4899;
+  color: white;
+}
+
+.moda-qty-control span {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.moda-remove-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moda-remove-btn:hover {
+  color: #ef4444;
+}
+
+.moda-cart-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .moda-cart-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moda-cart-subtotal,
+.moda-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.moda-cart-subtotal span:first-child,
+.moda-cart-total span:first-child {
+  color: var(--text-secondary, #666);
+}
+
+.moda-cart-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.moda-cart-total span:last-child {
+  color: #ec4899;
+}
+
+.moda-checkout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #ec4899;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moda-checkout-btn:hover {
+  background: #db2777;
+  transform: scale(1.02);
+}
+
+/* ============================================================================
+   Responsivo
+   ============================================================================ */
+@media (max-width: 1200px) {
+  .moda-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .moda-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .moda-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .moda-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .moda-cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .moda-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .moda-search {
+    display: none;
+  }
+
+  .moda-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .moda-hero-buttons {
+    flex-direction: column;
+  }
+
+  .moda-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .moda-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .moda-categories {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  .moda-cat-btn {
+    flex-shrink: 0;
+  }
+
+  .moda-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .moda-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .moda-stat-value {
+    font-size: 2rem;
+  }
+
+  .moda-cta-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .moda-cta-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .moda-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .moda-cart-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .moda-section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .moda-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .moda-product-image {
+    aspect-ratio: 4/5;
+  }
+}

@@ -1,0 +1,1255 @@
+/* ============================================================================
+   NEXUSSHOP E-COMMERCE - Estilos da página de demonstração
+   ============================================================================ */
+
+/* Import base styles */
+@import '../projects-base.css';
+
+/* NexusShop Theme Variables - Compatible with dark/light mode */
+.nexus-page {
+  --nexus-primary: var(--warning, #f59e0b);
+  --nexus-secondary: var(--primary, #6366f1);
+  --nexus-accent: var(--success, #10b981);
+  --nexus-danger: var(--danger, #ef4444);
+  --nexus-dark: var(--bg-secondary, #18181b);
+  --nexus-darker: var(--bg-primary, #09090b);
+  --nexus-card: var(--bg-tertiary, #1f1f23);
+  --nexus-border: var(--border-color, rgba(245, 158, 11, 0.2));
+  --nexus-text: var(--text-primary, #fafafa);
+  --nexus-text-muted: var(--text-secondary, #a1a1aa);
+  
+  min-height: 100vh;
+  background: var(--nexus-darker);
+  color: var(--nexus-text);
+}
+
+.nexus-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+.nexus-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.nexus-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.nexus-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 30%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 70%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+}
+
+.nexus-hero-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.nexus-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+
+.nexus-shape-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--nexus-primary);
+  top: -100px;
+  right: -100px;
+}
+
+.nexus-shape-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--nexus-secondary);
+  bottom: -50px;
+  left: -50px;
+}
+
+.nexus-shape-3 {
+  width: 200px;
+  height: 200px;
+  background: var(--nexus-accent);
+  top: 50%;
+  left: 30%;
+}
+
+.nexus-hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nexus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--nexus-border);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: var(--nexus-primary);
+  margin-bottom: 1.5rem;
+}
+
+.nexus-hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #fcd34d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.nexus-tagline {
+  font-size: 1.25rem;
+  color: var(--nexus-primary);
+  margin-bottom: 1rem;
+}
+
+.nexus-description {
+  font-size: 1.1rem;
+  color: var(--nexus-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.nexus-hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--nexus-border);
+  border-bottom: 1px solid var(--nexus-border);
+}
+
+.nexus-stat-item {
+  text-align: center;
+}
+
+.nexus-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nexus-stat-label {
+  font-size: 0.875rem;
+  color: var(--nexus-text-muted);
+}
+
+.nexus-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nexus-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--nexus-primary), #d97706);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nexus-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+}
+
+.nexus-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nexus-btn-secondary:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--nexus-primary);
+}
+
+/* Hero Visual */
+.nexus-store-preview {
+  background: var(--nexus-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nexus-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--nexus-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nexus-preview-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--nexus-primary);
+  font-weight: 700;
+}
+
+.nexus-preview-cart {
+  position: relative;
+  color: var(--nexus-text-muted);
+}
+
+.nexus-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nexus-primary);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.nexus-preview-products {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nexus-mini-product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--nexus-dark);
+  border-radius: 8px;
+}
+
+.nexus-mini-image {
+  font-size: 2rem;
+}
+
+.nexus-mini-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nexus-mini-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nexus-mini-price {
+  font-size: 0.85rem;
+  color: var(--nexus-primary);
+}
+
+/* ============================================================================
+   FEATURES SECTION
+   ============================================================================ */
+.nexus-features {
+  padding: 6rem 0;
+  background: var(--nexus-dark);
+}
+
+.nexus-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.nexus-section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(245, 158, 11, 0.15);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: var(--nexus-primary);
+  margin-bottom: 1rem;
+}
+
+.nexus-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.nexus-section-header p {
+  font-size: 1.1rem;
+  color: var(--nexus-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nexus-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.nexus-feature-card {
+  padding: 2rem;
+  background: var(--nexus-card);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.nexus-feature-card:hover {
+  border-color: var(--nexus-primary);
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.15);
+}
+
+.nexus-feature-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--nexus-primary), #d97706);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.nexus-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.nexus-feature-card p {
+  font-size: 0.95rem;
+  color: var(--nexus-text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   STORE DEMO SECTION
+   ============================================================================ */
+.nexus-demo-section {
+  padding: 6rem 0;
+}
+
+.nexus-store-demo {
+  background: var(--nexus-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.nexus-store-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--nexus-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nexus-store-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--nexus-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.nexus-store-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--nexus-card);
+  border-radius: 8px;
+  max-width: 400px;
+  color: var(--nexus-text-muted);
+}
+
+.nexus-store-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--nexus-text);
+  font-size: 0.95rem;
+}
+
+.nexus-store-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nexus-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--nexus-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nexus-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.nexus-cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--nexus-primary);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nexus-cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nexus-danger);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Categories */
+.nexus-categories {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nexus-category-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: var(--nexus-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nexus-category-btn:hover,
+.nexus-category-btn.active {
+  background: var(--nexus-primary);
+  border-color: var(--nexus-primary);
+  color: #000;
+}
+
+/* Store Content */
+.nexus-store-content {
+  display: flex;
+  position: relative;
+}
+
+.nexus-products-area {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.nexus-products-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  color: var(--nexus-text-muted);
+  font-size: 0.9rem;
+}
+
+.nexus-view-modes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nexus-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--nexus-text-muted);
+  cursor: pointer;
+}
+
+.nexus-view-btn.active {
+  background: var(--nexus-primary);
+  border-color: var(--nexus-primary);
+  color: #000;
+}
+
+/* Products Grid */
+.nexus-products-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.nexus-products-grid.grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nexus-products-grid.list {
+  grid-template-columns: 1fr;
+}
+
+.nexus-products-grid.list .nexus-product-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nexus-products-grid.list .nexus-product-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.nexus-product-card {
+  position: relative;
+  padding: 1rem;
+  background: var(--nexus-dark);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.nexus-product-card:hover {
+  border-color: var(--nexus-primary);
+}
+
+.nexus-product-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--nexus-primary);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.nexus-wishlist-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: var(--nexus-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nexus-wishlist-btn:hover {
+  background: var(--nexus-danger);
+  color: #fff;
+}
+
+.nexus-product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
+.nexus-product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nexus-product-category {
+  font-size: 0.75rem;
+  color: var(--nexus-primary);
+  margin-bottom: 0.25rem;
+}
+
+.nexus-product-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.nexus-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.nexus-reviews {
+  color: var(--nexus-text-muted);
+}
+
+.nexus-product-prices {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.nexus-current-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nexus-primary);
+}
+
+.nexus-original-price {
+  font-size: 0.9rem;
+  color: var(--nexus-text-muted);
+  text-decoration: line-through;
+}
+
+.nexus-add-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--nexus-primary);
+  border-radius: 8px;
+  color: var(--nexus-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.nexus-add-cart-btn:hover {
+  background: var(--nexus-primary);
+  color: #000;
+}
+
+/* Cart Sidebar */
+.nexus-cart-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: var(--nexus-dark);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.nexus-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nexus-cart-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nexus-cart-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--nexus-text-muted);
+  cursor: pointer;
+}
+
+.nexus-cart-items {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.nexus-cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--nexus-text-muted);
+  text-align: center;
+}
+
+.nexus-cart-empty svg {
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.nexus-cart-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--nexus-card);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.nexus-cart-item-image {
+  font-size: 1.75rem;
+}
+
+.nexus-cart-item-info {
+  flex: 1;
+}
+
+.nexus-cart-item-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.nexus-cart-item-price {
+  font-size: 0.85rem;
+  color: var(--nexus-primary);
+}
+
+.nexus-cart-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nexus-cart-item-qty button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--nexus-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--nexus-text);
+  cursor: pointer;
+}
+
+.nexus-cart-item-qty span {
+  width: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.nexus-cart-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nexus-cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.nexus-total-value {
+  font-weight: 700;
+  color: var(--nexus-primary);
+}
+
+.nexus-checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem;
+  background: var(--nexus-primary);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nexus-checkout-btn:hover {
+  background: #d97706;
+}
+
+/* ============================================================================
+   ADMIN PREVIEW SECTION
+   ============================================================================ */
+.nexus-admin-preview {
+  padding: 6rem 0;
+  background: var(--nexus-dark);
+}
+
+.nexus-admin-dashboard {
+  background: var(--nexus-card);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nexus-admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.nexus-admin-stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--nexus-dark);
+  border-radius: 12px;
+}
+
+.nexus-admin-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 158, 11, 0.15);
+  border-radius: 12px;
+  color: var(--nexus-primary);
+}
+
+.nexus-admin-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nexus-admin-stat-label {
+  font-size: 0.8rem;
+  color: var(--nexus-text-muted);
+}
+
+.nexus-admin-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nexus-admin-stat-change {
+  font-size: 0.75rem;
+}
+
+.nexus-admin-stat-change.positive {
+  color: var(--nexus-accent);
+}
+
+/* Admin Charts */
+.nexus-admin-charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.nexus-chart-card {
+  background: var(--nexus-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.nexus-chart-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.nexus-sales-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.nexus-chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.nexus-chart-bar {
+  width: 24px;
+  background: linear-gradient(to top, var(--nexus-primary), #fcd34d);
+  border-radius: 4px 4px 0 0;
+}
+
+.nexus-chart-column span {
+  font-size: 0.75rem;
+  color: var(--nexus-text-muted);
+}
+
+.nexus-recent-orders {
+  background: var(--nexus-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.nexus-recent-orders h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.nexus-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nexus-order-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--nexus-card);
+  border-radius: 8px;
+}
+
+.nexus-order-main {
+  flex: 1;
+}
+
+.nexus-order-id {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+
+.nexus-order-customer {
+  font-size: 0.8rem;
+  color: var(--nexus-text-muted);
+}
+
+.nexus-order-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nexus-order-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.nexus-order-status.enviado { background: rgba(16, 185, 129, 0.2); color: var(--nexus-accent); }
+.nexus-order-status.pago { background: rgba(99, 102, 241, 0.2); color: var(--nexus-secondary); }
+.nexus-order-status.pendente { background: rgba(245, 158, 11, 0.2); color: var(--nexus-primary); }
+
+/* ============================================================================
+   TECH SECTION
+   ============================================================================ */
+.nexus-tech {
+  padding: 6rem 0;
+}
+
+.nexus-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nexus-tech-item {
+  padding: 1rem 2rem;
+  background: var(--nexus-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.nexus-tech-item:hover {
+  border-color: var(--nexus-primary);
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--nexus-primary);
+}
+
+/* ============================================================================
+   CTA SECTION
+   ============================================================================ */
+.nexus-cta {
+  padding: 6rem 0;
+  background: var(--nexus-dark);
+}
+
+.nexus-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nexus-cta-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.nexus-cta-content p {
+  font-size: 1.1rem;
+  color: var(--nexus-text-muted);
+  margin-bottom: 2rem;
+}
+
+.nexus-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Back Link */
+.nexus-back-link {
+  padding: 2rem;
+  text-align: center;
+}
+
+.nexus-back-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--nexus-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .nexus-hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nexus-hero-visual {
+    display: none;
+  }
+
+  .nexus-hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nexus-hero-buttons {
+    justify-content: center;
+  }
+
+  .nexus-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nexus-products-grid.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nexus-admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nexus-admin-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nexus-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .nexus-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nexus-products-grid.grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nexus-admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .nexus-cart-sidebar {
+    width: 100%;
+  }
+
+  .nexus-cta-buttons {
+    flex-direction: column;
+  }
+
+  /* Demo Section Mobile Fixes */
+  .nexus-demo-header {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nexus-demo-nav {
+    display: none;
+  }
+
+  .nexus-demo-content {
+    flex-direction: column;
+  }
+
+  .nexus-demo-main {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nexus-products-toolbar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .nexus-product-card {
+    padding: 0.75rem;
+  }
+
+  .nexus-product-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .nexus-filter-sidebar {
+    display: none;
+  }
+
+  .nexus-search-box {
+    width: 100%;
+  }
+
+  .nexus-view-toggles {
+    display: none;
+  }
+
+  /* Garantir que os textos sejam legíveis */
+  .nexus-stat-value,
+  .nexus-stat-label,
+  .nexus-product-price,
+  .nexus-product-name {
+    color: var(--nexus-text);
+  }
+}
+
+@media (max-width: 480px) {
+  .nexus-container {
+    padding: 0 1rem;
+  }
+
+  .nexus-hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nexus-btn-primary,
+  .nexus-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nexus-hero-stats {
+    gap: 1rem;
+  }
+
+  .nexus-stat-item {
+    min-width: 70px;
+  }
+}

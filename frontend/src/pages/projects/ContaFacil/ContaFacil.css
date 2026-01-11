@@ -1,0 +1,1247 @@
+/* ============================================================================
+   CONTA FÁCIL - Sistema para Contabilidade
+   ============================================================================ */
+
+.conta-page {
+  min-height: 100vh;
+  background: var(--bg-primary, #f8fafc);
+  color: var(--text-primary, #0f172a);
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+.conta-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 1rem 2rem;
+}
+
+[data-theme="dark"] .conta-header {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: rgba(59, 130, 246, 0.3);
+}
+
+.conta-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.conta-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.conta-back-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.conta-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-logo-icon {
+  font-size: 1.8rem;
+}
+
+.conta-logo strong {
+  color: #3b82f6;
+}
+
+.conta-nav {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.conta-nav a {
+  color: var(--text-secondary, #64748b);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.conta-nav a:hover {
+  color: #3b82f6;
+}
+
+/* ============================================================================
+   Hero
+   ============================================================================ */
+.conta-hero {
+  position: relative;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.conta-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+}
+
+.conta-hero-content {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.conta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 30px;
+  color: #3b82f6;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.conta-hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-hero-text h1 span {
+  color: #3b82f6;
+}
+
+.conta-hero-text p {
+  font-size: 1.15rem;
+  color: var(--text-secondary, #64748b);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.conta-hero-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.conta-feature-mini {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+[data-theme="dark"] .conta-feature-mini {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.conta-feature-mini svg {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.conta-feature-mini div {
+  display: flex;
+  flex-direction: column;
+}
+
+.conta-feature-mini strong {
+  font-size: 0.9rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-feature-mini span {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.conta-hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.conta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.conta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.conta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #3b82f6;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.conta-btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+/* Dashboard Preview */
+.conta-hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.conta-dashboard-preview {
+  width: 380px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .conta-dashboard-preview {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.conta-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  font-weight: 600;
+}
+
+.conta-preview-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.conta-preview-dots span {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.conta-preview-content {
+  padding: 1.25rem;
+}
+
+.conta-preview-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.preview-card {
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.preview-card.green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.preview-card.red {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.preview-card span {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.preview-card strong {
+  font-size: 1.1rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-preview-chart {
+  background: var(--bg-secondary, #f8fafc);
+  border-radius: 10px;
+  padding: 1rem;
+  height: 80px;
+}
+
+[data-theme="dark"] .conta-preview-chart {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.mini-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+  gap: 0.75rem;
+}
+
+.mini-bar {
+  width: 30px;
+  background: linear-gradient(180deg, #3b82f6 0%, #60a5fa 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+}
+
+/* ============================================================================
+   Stats
+   ============================================================================ */
+.conta-stats {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.conta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.conta-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.conta-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-align: center;
+}
+
+.conta-stat-card svg {
+  opacity: 0.9;
+}
+
+.conta-stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.conta-stat-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ============================================================================
+   Services
+   ============================================================================ */
+.conta-services {
+  padding: 5rem 2rem;
+}
+
+.conta-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.conta-section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-section-header p {
+  color: var(--text-secondary, #64748b);
+  font-size: 1.1rem;
+}
+
+.conta-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.conta-service-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .conta-service-card {
+  background: #1e293b;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.conta-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+
+.conta-service-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+  color: #3b82f6;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+}
+
+.conta-service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-service-card p {
+  color: var(--text-secondary, #64748b);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   Demo Dashboard
+   ============================================================================ */
+.conta-demo {
+  padding: 5rem 2rem;
+  background: var(--bg-secondary, #f1f5f9);
+}
+
+[data-theme="dark"] .conta-demo {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.conta-dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.conta-kpi-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .conta-kpi-card {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.kpi-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.kpi-icon.green {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.kpi-icon.blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.kpi-icon.orange {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.kpi-icon.purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-info span {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.kpi-info strong {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  line-height: 1.2;
+}
+
+.kpi-change {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.kpi-change.positive {
+  color: #22c55e;
+}
+
+.kpi-change.neutral {
+  color: #f97316;
+}
+
+/* Chart Section */
+.conta-chart-section {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .conta-chart-section {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.conta-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.conta-chart-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+}
+
+.conta-chart-legend {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.legend-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.legend-item .dot.green {
+  background: #22c55e;
+}
+
+.legend-item .dot.red {
+  background: #ef4444;
+}
+
+.conta-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 220px;
+  padding: 0 1rem;
+}
+
+.conta-chart-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bar-group {
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 32px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bar:hover {
+  opacity: 0.8;
+}
+
+.bar.receita {
+  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+}
+
+.bar.despesa {
+  background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+}
+
+.bar-value {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bar:hover .bar-value {
+  opacity: 1;
+}
+
+.bar-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #64748b);
+  font-weight: 500;
+}
+
+/* Tabs */
+.conta-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+[data-theme="dark"] .conta-tabs {
+  background: #1e293b;
+}
+
+.conta-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.conta-tabs button:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.conta-tabs button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.conta-tab-content {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .conta-tab-content {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Filters */
+.conta-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.conta-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary, #f8fafc);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+}
+
+[data-theme="dark"] .conta-search {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.conta-search svg {
+  color: var(--text-secondary, #64748b);
+}
+
+.conta-search input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  color: var(--text-primary, #0f172a);
+  outline: none;
+}
+
+.conta-select {
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary, #f8fafc);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text-primary, #0f172a);
+  cursor: pointer;
+}
+
+[data-theme="dark"] .conta-select {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.conta-btn-add {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: all 0.3s ease;
+}
+
+.conta-btn-add:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Table */
+.conta-table-wrapper {
+  overflow-x: auto;
+}
+
+.conta-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.conta-table th {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .conta-table th {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.conta-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-primary, #0f172a);
+}
+
+[data-theme="dark"] .conta-table td {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.empresa-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.empresa-icon {
+  font-size: 1.5rem;
+}
+
+.cnpj {
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.faturamento {
+  font-weight: 600;
+  color: #22c55e !important;
+}
+
+.regime-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.regime-badge.simples-nacional {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.regime-badge.lucro-presumido {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.regime-badge.lucro-real {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge.ativo {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.status-badge.pendente {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.conta-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary, #f8fafc);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary, #64748b);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .action-btn {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.action-btn.view:hover {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.action-btn.edit:hover {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.action-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Obrigações List */
+.conta-obrigacoes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.conta-obrigacao-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-secondary, #f8fafc);
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .conta-obrigacao-card {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.conta-obrigacao-card.entregue {
+  border-left-color: #22c55e;
+}
+
+.conta-obrigacao-card.pendente {
+  border-left-color: #f97316;
+}
+
+.conta-obrigacao-card.atrasado {
+  border-left-color: #ef4444;
+}
+
+.conta-obrigacao-card:hover {
+  transform: translateX(5px);
+}
+
+.obrigacao-status-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.conta-obrigacao-card.entregue .obrigacao-status-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.conta-obrigacao-card.pendente .obrigacao-status-icon {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.conta-obrigacao-card.atrasado .obrigacao-status-icon {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.obrigacao-info {
+  flex: 1;
+}
+
+.obrigacao-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 0.2rem;
+}
+
+.obrigacao-empresa {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.obrigacao-vencimento {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.9rem;
+}
+
+.obrigacao-status {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.obrigacao-status.entregue {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.obrigacao-status.pendente {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.obrigacao-status.atrasado {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* ============================================================================
+   CTA
+   ============================================================================ */
+.conta-cta {
+  padding: 5rem 2rem;
+}
+
+.conta-cta-content {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.conta-cta-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.conta-cta-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+.conta-cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.conta-cta-primary {
+  padding: 1rem 2rem;
+  background: white;
+  color: #3b82f6;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.conta-cta-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.conta-cta-secondary {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.conta-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* ============================================================================
+   Responsivo
+   ============================================================================ */
+@media (max-width: 1200px) {
+  .conta-dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .conta-hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .conta-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .conta-hero-buttons {
+    justify-content: center;
+  }
+
+  .conta-hero-features {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .conta-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .conta-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .conta-cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .conta-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .conta-nav {
+    display: none;
+  }
+
+  .conta-hero {
+    padding: 2rem 1rem;
+  }
+
+  .conta-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .conta-hero-features {
+    grid-template-columns: 1fr;
+  }
+
+  .conta-hero-buttons {
+    flex-direction: column;
+  }
+
+  .conta-hero-visual {
+    display: none;
+  }
+
+  .conta-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .conta-stat-value {
+    font-size: 1.8rem;
+  }
+
+  .conta-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conta-dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .conta-chart {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .conta-filters {
+    flex-direction: column;
+  }
+
+  .conta-search {
+    min-width: auto;
+  }
+
+  .conta-btn-add {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .conta-table {
+    font-size: 0.85rem;
+  }
+
+  .conta-table th,
+  .conta-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .conta-cta-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .conta-cta-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .conta-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .conta-section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .conta-obrigacao-card {
+    flex-wrap: wrap;
+  }
+
+  .obrigacao-vencimento {
+    order: 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] .obrigacao-vencimento {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}

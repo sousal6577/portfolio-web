@@ -1,0 +1,306 @@
+/* ============================================================================
+   PROJECTS BASE - Estilos base para todas as páginas de projetos
+   Garante compatibilidade com dark/light mode
+   ============================================================================ */
+
+/* Variáveis que funcionam com o tema global */
+:root {
+  /* Project pages inherit global theme colors */
+  --project-bg: var(--bg-primary);
+  --project-card: var(--bg-secondary);
+  --project-card-hover: var(--bg-tertiary);
+  --project-text: var(--text-primary);
+  --project-text-muted: var(--text-secondary);
+  --project-border: var(--border-color);
+}
+
+/* Base styles for all project pages */
+.project-page-base {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+/* ============================================================================
+   MOBILE TOUCH INTERACTIONS
+   ============================================================================ */
+
+/* Touch feedback for buttons */
+@media (hover: none) and (pointer: coarse) {
+  .project-btn-primary:active,
+  .project-btn-secondary:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+  
+  /* Better touch targets */
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .project-btn-primary:hover,
+  .project-btn-secondary:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================================
+   COMMON BUTTON STYLES
+   ============================================================================ */
+
+/* Common button styles */
+.project-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.project-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--primary-alpha);
+}
+
+.project-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.project-btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Common card styles */
+.project-card-base {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.project-card-base:hover {
+  border-color: var(--primary-alpha);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Section header */
+.project-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.project-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.project-section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Back button common */
+.project-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.project-back-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Hero section base */
+.project-hero-base {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.project-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.project-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, var(--primary-alpha) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, var(--secondary-alpha) 0%, transparent 50%);
+}
+
+.project-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================================
+   MOBILE ANIMATIONS & INTERACTIONS
+   ============================================================================ */
+
+/* Smooth animations for all elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Apply animations to common elements */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+/* ============================================================================
+   COMMON RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .project-hero-base {
+    padding: 6rem 1rem 3rem;
+    min-height: auto;
+  }
+  
+  .project-section-title {
+    font-size: 2rem;
+  }
+  
+  .project-btn-primary,
+  .project-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================================
+   MOBILE SPECIFIC ENHANCEMENTS
+   ============================================================================ */
+
+@media (max-width: 480px) {
+  /* Ensure text is readable on small screens */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Better spacing on mobile */
+  .project-hero-base {
+    padding: 5rem 1rem 2rem;
+  }
+  
+  /* Ensure buttons are tappable */
+  .project-btn-primary,
+  .project-btn-secondary {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Better card padding on mobile */
+  .project-card-base {
+    padding: 1.25rem;
+  }
+  
+  /* Section headers */
+  .project-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-section-subtitle {
+    font-size: 1rem;
+  }
+}

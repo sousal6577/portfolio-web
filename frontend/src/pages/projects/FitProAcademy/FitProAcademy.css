@@ -1,0 +1,1206 @@
+/* ============================================================================
+   FITPRO ACADEMY - Estilos da página de demonstração
+   ============================================================================ */
+
+/* Import base styles */
+@import '../projects-base.css';
+
+/* FitPro Theme Variables - RED FITNESS THEME */
+.fitpro-page {
+  --fitpro-primary: #ef4444;
+  --fitpro-secondary: #dc2626;
+  --fitpro-accent: #f97316;
+  --fitpro-warning: #f59e0b;
+  --fitpro-danger: #b91c1c;
+  --fitpro-success: #22c55e;
+  --fitpro-dark: #1a1a1a;
+  --fitpro-darker: #0f0f0f;
+  --fitpro-card: #1f1f1f;
+  --fitpro-border: rgba(239, 68, 68, 0.2);
+  --fitpro-text: #f5f5f5;
+  --fitpro-text-muted: #a3a3a3;
+  --fitpro-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+  
+  min-height: 100vh;
+  background: var(--fitpro-darker);
+  color: var(--fitpro-text);
+}
+
+/* Container */
+.fitpro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+.fitpro-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.fitpro-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fitpro-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(220, 38, 38, 0.2) 0%, transparent 50%);
+}
+
+.fitpro-hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.fitpro-hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fitpro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: var(--fitpro-primary);
+  margin-bottom: 1.5rem;
+}
+
+.fitpro-hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #fecaca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.fitpro-tagline {
+  font-size: 1.25rem;
+  color: var(--fitpro-primary);
+  margin-bottom: 1rem;
+}
+
+.fitpro-description {
+  font-size: 1.1rem;
+  color: var(--fitpro-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.fitpro-hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--fitpro-border);
+  border-bottom: 1px solid var(--fitpro-border);
+}
+
+.fitpro-stat-item {
+  text-align: center;
+}
+
+.fitpro-stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fitpro-stat-label {
+  font-size: 0.875rem;
+  color: var(--fitpro-text-muted);
+}
+
+.fitpro-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.fitpro-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--fitpro-primary), var(--fitpro-secondary));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.fitpro-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+}
+
+.fitpro-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--fitpro-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.fitpro-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--fitpro-primary);
+}
+
+/* Hero Mockup */
+.fitpro-mockup {
+  background: var(--fitpro-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--fitpro-border);
+}
+
+.fitpro-mockup-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--fitpro-dark);
+  border-bottom: 1px solid var(--fitpro-border);
+}
+
+.fitpro-mockup-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.fitpro-mockup-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--fitpro-border);
+}
+
+.fitpro-mockup-dots span:nth-child(1) { background: #ef4444; }
+.fitpro-mockup-dots span:nth-child(2) { background: #f59e0b; }
+.fitpro-mockup-dots span:nth-child(3) { background: #10b981; }
+
+.fitpro-mockup-title {
+  font-size: 0.875rem;
+  color: var(--fitpro-text-muted);
+}
+
+.fitpro-mockup-content {
+  padding: 1.5rem;
+}
+
+.fitpro-mini-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fitpro-mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--fitpro-dark);
+  border-radius: 8px;
+}
+
+.fitpro-mini-stat .value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fitpro-mini-stat .label {
+  font-size: 0.75rem;
+  color: var(--fitpro-text-muted);
+}
+
+.fitpro-mini-chart {
+  background: var(--fitpro-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 120px;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+  gap: 8px;
+}
+
+.chart-bar {
+  width: 100%;
+  background: linear-gradient(to top, var(--fitpro-primary), var(--fitpro-secondary));
+  border-radius: 4px 4px 0 0;
+}
+
+/* ============================================================================
+   FEATURES SECTION
+   ============================================================================ */
+.fitpro-features {
+  padding: 6rem 0;
+  background: var(--fitpro-dark);
+}
+
+.fitpro-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.fitpro-section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: var(--fitpro-primary);
+  margin-bottom: 1rem;
+}
+
+.fitpro-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.fitpro-section-header p {
+  font-size: 1.1rem;
+  color: var(--fitpro-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fitpro-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.fitpro-feature-card {
+  padding: 2rem;
+  background: var(--fitpro-card);
+  border-radius: 16px;
+  border: 1px solid var(--fitpro-border);
+  transition: all 0.3s ease;
+}
+
+.fitpro-feature-card:hover {
+  border-color: var(--fitpro-primary);
+  box-shadow: 0 10px 40px rgba(239, 68, 68, 0.2);
+}
+
+.fitpro-feature-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--fitpro-primary), var(--fitpro-secondary));
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.fitpro-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.fitpro-feature-card p {
+  font-size: 0.95rem;
+  color: var(--fitpro-text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   DEMO SECTION
+   ============================================================================ */
+.fitpro-demo-section {
+  padding: 6rem 0;
+}
+
+.fitpro-demo-container {
+  display: flex;
+  background: var(--fitpro-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--fitpro-border);
+  min-height: 600px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Demo Sidebar */
+.fitpro-demo-sidebar {
+  width: 240px;
+  background: var(--fitpro-dark);
+  border-right: 1px solid var(--fitpro-border);
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.fitpro-demo-sidebar.closed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.fitpro-demo-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  color: var(--fitpro-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.fitpro-demo-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fitpro-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--fitpro-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  text-align: left;
+  width: 100%;
+}
+
+.fitpro-nav-item:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fff;
+}
+
+.fitpro-nav-item.active {
+  background: linear-gradient(135deg, var(--fitpro-primary), var(--fitpro-secondary));
+  color: #fff;
+}
+
+/* Demo Main */
+.fitpro-demo-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.fitpro-demo-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--fitpro-dark);
+  border-bottom: 1px solid var(--fitpro-border);
+}
+
+.fitpro-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--fitpro-border);
+  border-radius: 8px;
+  color: var(--fitpro-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fitpro-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.fitpro-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--fitpro-card);
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.fitpro-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fitpro-text);
+  font-size: 0.95rem;
+}
+
+.fitpro-search input::placeholder {
+  color: var(--fitpro-text-muted);
+}
+
+.fitpro-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.fitpro-icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--fitpro-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fitpro-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--fitpro-danger);
+  border-radius: 50%;
+}
+
+.fitpro-user-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--fitpro-primary), var(--fitpro-secondary));
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Demo Content */
+.fitpro-demo-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.fitpro-dashboard h2,
+.fitpro-students h2,
+.fitpro-workouts h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats Grid */
+.fitpro-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fitpro-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--fitpro-dark);
+  border-radius: 12px;
+  border: 1px solid var(--fitpro-border);
+}
+
+.fitpro-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.fitpro-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.fitpro-stat-card .fitpro-stat-label {
+  font-size: 0.8rem;
+  color: var(--fitpro-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.fitpro-stat-card .fitpro-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fitpro-stat-change {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.fitpro-stat-change.positive {
+  color: var(--fitpro-accent);
+}
+
+/* Chart Section */
+.fitpro-chart-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.fitpro-chart-card {
+  background: var(--fitpro-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--fitpro-border);
+}
+
+.fitpro-chart-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.fitpro-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 150px;
+  padding-top: 1rem;
+}
+
+.fitpro-chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.fitpro-chart-bar {
+  width: 24px;
+  background: linear-gradient(to top, var(--fitpro-primary), var(--fitpro-secondary));
+  border-radius: 4px 4px 0 0;
+}
+
+.fitpro-chart-column span {
+  font-size: 0.75rem;
+  color: var(--fitpro-text-muted);
+}
+
+/* Activity */
+.fitpro-recent-activity {
+  background: var(--fitpro-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--fitpro-border);
+}
+
+.fitpro-recent-activity h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.fitpro-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fitpro-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fitpro-activity-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  color: var(--fitpro-primary);
+}
+
+.fitpro-activity-text {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.fitpro-activity-time {
+  font-size: 0.75rem;
+  color: var(--fitpro-text-muted);
+}
+
+/* Page Header */
+.fitpro-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+/* Table */
+.fitpro-table-container {
+  background: var(--fitpro-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--fitpro-border);
+}
+
+.fitpro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fitpro-table th,
+.fitpro-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--fitpro-border);
+}
+
+.fitpro-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--fitpro-text-muted);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.fitpro-table td {
+  font-size: 0.9rem;
+}
+
+.fitpro-table tr:last-child td {
+  border-bottom: none;
+}
+
+.fitpro-student-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fitpro-student-avatar {
+  font-size: 1.5rem;
+}
+
+.fitpro-plan-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.fitpro-plan-badge.basic { background: rgba(156, 163, 175, 0.2); color: #9ca3af; }
+.fitpro-plan-badge.premium { background: rgba(239, 68, 68, 0.2); color: var(--fitpro-primary); }
+.fitpro-plan-badge.vip { background: rgba(245, 158, 11, 0.2); color: var(--fitpro-warning); }
+
+.fitpro-status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.fitpro-status-badge.active { background: rgba(16, 185, 129, 0.2); color: var(--fitpro-accent); }
+.fitpro-status-badge.pending { background: rgba(245, 158, 11, 0.2); color: var(--fitpro-warning); }
+.fitpro-status-badge.inactive { background: rgba(239, 68, 68, 0.2); color: var(--fitpro-danger); }
+
+.fitpro-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fitpro-progress-bar > div:first-child {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fitpro-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--fitpro-primary), var(--fitpro-accent));
+  border-radius: 3px;
+}
+
+.fitpro-progress-bar span {
+  font-size: 0.75rem;
+  color: var(--fitpro-text-muted);
+  min-width: 35px;
+}
+
+.fitpro-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fitpro-action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--fitpro-border);
+  border-radius: 6px;
+  color: var(--fitpro-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fitpro-action-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--fitpro-primary);
+  color: var(--fitpro-primary);
+}
+
+/* Workouts Grid */
+.fitpro-workouts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.fitpro-workout-card {
+  padding: 1.5rem;
+  background: var(--fitpro-dark);
+  border-radius: 12px;
+  border: 1px solid var(--fitpro-border);
+  transition: all 0.2s ease;
+}
+
+.fitpro-workout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: var(--fitpro-primary);
+}
+
+.fitpro-difficulty {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+}
+
+.fitpro-difficulty.iniciante { background: rgba(16, 185, 129, 0.2); color: var(--fitpro-accent); }
+.fitpro-difficulty.intermediário { background: rgba(245, 158, 11, 0.2); color: var(--fitpro-warning); }
+.fitpro-difficulty.avançado { background: rgba(239, 68, 68, 0.2); color: var(--fitpro-danger); }
+
+.fitpro-workout-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.fitpro-workout-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--fitpro-text-muted);
+}
+
+.fitpro-workout-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.fitpro-workout-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: var(--fitpro-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fitpro-workout-btn:hover {
+  background: var(--fitpro-primary);
+  color: #fff;
+}
+
+/* Coming Soon */
+.fitpro-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+}
+
+.fitpro-coming-soon-content {
+  text-align: center;
+  color: var(--fitpro-text-muted);
+}
+
+.fitpro-coming-soon-content svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.fitpro-coming-soon-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.fitpro-coming-soon-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================================
+   TESTIMONIALS SECTION
+   ============================================================================ */
+.fitpro-testimonials {
+  padding: 6rem 0;
+  background: var(--fitpro-dark);
+}
+
+.fitpro-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.fitpro-testimonial-card {
+  padding: 2rem;
+  background: var(--fitpro-card);
+  border-radius: 16px;
+  border: 1px solid var(--fitpro-border);
+}
+
+.fitpro-testimonial-stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.fitpro-testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--fitpro-text);
+  margin-bottom: 1.5rem;
+}
+
+.fitpro-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fitpro-testimonial-avatar {
+  font-size: 2rem;
+}
+
+.fitpro-testimonial-author strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.fitpro-testimonial-author span {
+  font-size: 0.8rem;
+  color: var(--fitpro-text-muted);
+}
+
+/* ============================================================================
+   TECH SECTION
+   ============================================================================ */
+.fitpro-tech {
+  padding: 6rem 0;
+}
+
+.fitpro-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fitpro-tech-item {
+  padding: 1rem 2rem;
+  background: var(--fitpro-card);
+  border: 1px solid var(--fitpro-border);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.fitpro-tech-item:hover {
+  border-color: var(--fitpro-primary);
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--fitpro-primary);
+}
+
+/* ============================================================================
+   CTA SECTION
+   ============================================================================ */
+.fitpro-cta {
+  padding: 6rem 0;
+  background: var(--fitpro-dark);
+}
+
+.fitpro-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fitpro-cta-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.fitpro-cta-content p {
+  font-size: 1.1rem;
+  color: var(--fitpro-text-muted);
+  margin-bottom: 2rem;
+}
+
+.fitpro-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Back Link */
+.fitpro-back-link {
+  padding: 2rem;
+  text-align: center;
+}
+
+.fitpro-back-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--fitpro-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.fitpro-back-link a:hover {
+  gap: 0.75rem;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .fitpro-hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .fitpro-hero-visual {
+    display: none;
+  }
+
+  .fitpro-hero-stats {
+    justify-content: center;
+  }
+
+  .fitpro-hero-buttons {
+    justify-content: center;
+  }
+
+  .fitpro-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fitpro-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fitpro-chart-section {
+    grid-template-columns: 1fr;
+  }
+
+  .fitpro-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .fitpro-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .fitpro-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Demo Mobile - Esconder sidebar e mostrar conteúdo */
+  .fitpro-demo-sidebar {
+    display: none;
+  }
+
+  .fitpro-demo-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fitpro-demo-main {
+    width: 100%;
+  }
+
+  .fitpro-demo-content {
+    padding: 1rem;
+  }
+
+  .fitpro-demo-topbar {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .fitpro-demo-title {
+    font-size: 1rem;
+  }
+
+  .fitpro-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .fitpro-stat-card {
+    padding: 1rem;
+  }
+
+  .fitpro-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .fitpro-workouts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fitpro-table {
+    font-size: 0.8rem;
+  }
+
+  .fitpro-table th,
+  .fitpro-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .fitpro-cta-buttons {
+    flex-direction: column;
+  }
+
+  /* Garantir contraste dos textos */
+  .fitpro-stat-label,
+  .fitpro-workout-name,
+  .fitpro-table td {
+    color: var(--fitpro-text);
+  }
+}
+
+@media (max-width: 480px) {
+  .fitpro-container {
+    padding: 0 1rem;
+  }
+
+  .fitpro-hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .fitpro-btn-primary,
+  .fitpro-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fitpro-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fitpro-demo-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

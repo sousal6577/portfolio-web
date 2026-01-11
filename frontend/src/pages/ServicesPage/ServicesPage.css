@@ -1,0 +1,56 @@
+/* ============================================================================
+   SERVICES PAGE STYLES
+   ============================================================================ */
+
+.services-page {
+  overflow-x: hidden;
+}
+
+/* Page Hero */
+.page-hero {
+  position: relative;
+  padding: 10rem 0 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.page-hero-description {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, var(--primary-alpha) 0%, transparent 60%);
+  z-index: 0;
+}

@@ -1,0 +1,44 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+frontend/dist
+backend/public
+
+# Development files
+.git
+.gitignore
+*.md
+docs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+**/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+coverage/
+__tests__/
+*.test.js
+*.spec.js
+
+# Development configs
+.editorconfig
+.eslintrc*
+.prettierrc*

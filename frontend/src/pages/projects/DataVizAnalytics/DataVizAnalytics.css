@@ -1,0 +1,931 @@
+/* ============================================================================
+   DATAVIZ ANALYTICS - Estilos da página de demonstração
+   ============================================================================ */
+
+/* Import base styles */
+@import '../projects-base.css';
+
+/* DataViz Theme Variables - Compatible with dark/light mode */
+.dataviz-page {
+  --dataviz-primary: var(--primary, #6366f1);
+  --dataviz-secondary: var(--warning, #f59e0b);
+  --dataviz-accent: var(--success, #10b981);
+  --dataviz-danger: var(--danger, #ef4444);
+  --dataviz-info: var(--info, #3b82f6);
+  --dataviz-dark: var(--bg-secondary, #18181b);
+  --dataviz-darker: var(--bg-primary, #09090b);
+  --dataviz-card: var(--bg-tertiary, #1f1f23);
+  --dataviz-border: var(--border-color, rgba(99, 102, 241, 0.2));
+  --dataviz-text: var(--text-primary, #fafafa);
+  --dataviz-text-muted: var(--text-secondary, #a1a1aa);
+  
+  min-height: 100vh;
+  background: var(--dataviz-darker);
+  color: var(--dataviz-text);
+}
+
+.dataviz-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+.dataviz-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.dataviz-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.dataviz-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 40%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.dataviz-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.dataviz-hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dataviz-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid var(--dataviz-border);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: var(--dataviz-primary);
+  margin-bottom: 1.5rem;
+}
+
+.dataviz-hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.dataviz-tagline {
+  font-size: 1.25rem;
+  color: var(--dataviz-primary);
+  margin-bottom: 1rem;
+}
+
+.dataviz-description {
+  font-size: 1.1rem;
+  color: var(--dataviz-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.dataviz-hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--dataviz-border);
+  border-bottom: 1px solid var(--dataviz-border);
+}
+
+.dataviz-stat-item {
+  text-align: center;
+}
+
+.dataviz-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dataviz-stat-label {
+  font-size: 0.875rem;
+  color: var(--dataviz-text-muted);
+}
+
+.dataviz-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dataviz-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--dataviz-primary), #4f46e5);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.dataviz-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.dataviz-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--dataviz-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.dataviz-btn-secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--dataviz-primary);
+}
+
+/* Hero Visual - Mini Dashboard */
+.dataviz-mini-dashboard {
+  background: var(--dataviz-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dataviz-mini-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--dataviz-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+}
+
+.dataviz-live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--dataviz-accent);
+}
+
+.dataviz-live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--dataviz-accent);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.dataviz-mini-kpis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.dataviz-mini-kpi {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataviz-mini-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dataviz-mini-label {
+  font-size: 0.8rem;
+  color: var(--dataviz-text-muted);
+}
+
+.dataviz-mini-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 0 1.5rem 1.5rem;
+  height: 80px;
+}
+
+.dataviz-mini-bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--dataviz-primary), #a5b4fc);
+  border-radius: 4px 4px 0 0;
+  min-height: 10%;
+}
+
+/* ============================================================================
+   FEATURES SECTION
+   ============================================================================ */
+.dataviz-features {
+  padding: 6rem 0;
+  background: var(--dataviz-dark);
+}
+
+.dataviz-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.dataviz-section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: var(--dataviz-primary);
+  margin-bottom: 1rem;
+}
+
+.dataviz-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.dataviz-section-header p {
+  font-size: 1.1rem;
+  color: var(--dataviz-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dataviz-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.dataviz-feature-card {
+  padding: 2rem;
+  background: var(--dataviz-card);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dataviz-feature-card:hover {
+  border-color: var(--dataviz-primary);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+}
+
+.dataviz-feature-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dataviz-primary), #4f46e5);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.dataviz-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.dataviz-feature-card p {
+  font-size: 0.95rem;
+  color: var(--dataviz-text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   DASHBOARD DEMO SECTION
+   ============================================================================ */
+.dataviz-demo-section {
+  padding: 6rem 0;
+}
+
+.dataviz-dashboard {
+  background: var(--dataviz-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.dataviz-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--dataviz-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dataviz-dash-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dataviz-primary);
+}
+
+.dataviz-dash-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dataviz-period-selector {
+  display: flex;
+  background: var(--dataviz-card);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dataviz-period-btn {
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--dataviz-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.dataviz-period-btn:hover,
+.dataviz-period-btn.active {
+  background: var(--dataviz-primary);
+  color: #fff;
+}
+
+.dataviz-live-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--dataviz-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.dataviz-live-btn.active {
+  border-color: var(--dataviz-accent);
+  color: var(--dataviz-accent);
+}
+
+.dataviz-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--dataviz-text-muted);
+  cursor: pointer;
+}
+
+.dataviz-icon-btn:hover {
+  color: #fff;
+  border-color: var(--dataviz-primary);
+}
+
+/* KPIs Row */
+.dataviz-kpis-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dataviz-kpi-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--dataviz-dark);
+  border-radius: 12px;
+}
+
+.dataviz-kpi-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 12px;
+  color: var(--dataviz-primary);
+}
+
+.dataviz-kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataviz-kpi-label {
+  font-size: 0.8rem;
+  color: var(--dataviz-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.dataviz-kpi-value-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dataviz-kpi-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.dataviz-kpi-change {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.dataviz-kpi-change.positive {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--dataviz-accent);
+}
+
+.dataviz-kpi-change.negative {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--dataviz-danger);
+}
+
+/* Charts Row */
+.dataviz-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.dataviz-chart-card {
+  background: var(--dataviz-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dataviz-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.dataviz-chart-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dataviz-trend-icon {
+  color: var(--dataviz-accent);
+}
+
+/* Bar Chart */
+.dataviz-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.dataviz-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.dataviz-bar-container {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dataviz-bar {
+  width: 60%;
+  background: linear-gradient(to top, var(--dataviz-primary), #a5b4fc);
+  border-radius: 4px 4px 0 0;
+}
+
+.dataviz-bar-label {
+  font-size: 0.75rem;
+  color: var(--dataviz-text-muted);
+}
+
+/* Donut Chart */
+.dataviz-donut-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dataviz-donut {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.dataviz-donut svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dataviz-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dataviz-donut-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.dataviz-donut-label {
+  font-size: 0.7rem;
+  color: var(--dataviz-text-muted);
+}
+
+.dataviz-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dataviz-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.dataviz-legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.dataviz-legend-label {
+  flex: 1;
+  color: var(--dataviz-text-muted);
+}
+
+.dataviz-legend-value {
+  font-weight: 600;
+}
+
+/* Activity Feed */
+.dataviz-activity-card {
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.dataviz-activity-time {
+  font-size: 0.8rem;
+  color: var(--dataviz-accent);
+  font-family: monospace;
+}
+
+.dataviz-activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dataviz-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: var(--dataviz-card);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.dataviz-activity-icon {
+  font-size: 1rem;
+}
+
+.dataviz-activity-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dataviz-activity-msg {
+  font-weight: 500;
+}
+
+.dataviz-activity-location {
+  font-size: 0.75rem;
+  color: var(--dataviz-text-muted);
+}
+
+.dataviz-activity-time-ago {
+  font-size: 0.75rem;
+  color: var(--dataviz-text-muted);
+}
+
+/* Metrics Row */
+.dataviz-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dataviz-metric-card {
+  text-align: center;
+  padding: 1rem;
+  background: var(--dataviz-dark);
+  border-radius: 12px;
+}
+
+.dataviz-metric-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dataviz-primary);
+  margin-bottom: 0.25rem;
+}
+
+.dataviz-metric-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.dataviz-metric-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--dataviz-text-muted);
+}
+
+/* ============================================================================
+   TECH SECTION
+   ============================================================================ */
+.dataviz-tech {
+  padding: 6rem 0;
+  background: var(--dataviz-dark);
+}
+
+.dataviz-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dataviz-tech-item {
+  padding: 1rem 2rem;
+  background: var(--dataviz-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.dataviz-tech-item:hover {
+  border-color: var(--dataviz-primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--dataviz-primary);
+}
+
+/* ============================================================================
+   ARCHITECTURE SECTION
+   ============================================================================ */
+.dataviz-architecture {
+  padding: 6rem 0;
+}
+
+.dataviz-arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dataviz-arch-layer {
+  width: 100%;
+  max-width: 600px;
+  background: var(--dataviz-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dataviz-arch-title {
+  font-size: 0.85rem;
+  color: var(--dataviz-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.dataviz-arch-items {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dataviz-arch-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--dataviz-dark);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dataviz-arch-arrow {
+  font-size: 1.5rem;
+  color: var(--dataviz-primary);
+}
+
+/* ============================================================================
+   CTA SECTION
+   ============================================================================ */
+.dataviz-cta {
+  padding: 6rem 0;
+  background: var(--dataviz-dark);
+}
+
+.dataviz-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dataviz-cta-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dataviz-cta-content p {
+  font-size: 1.1rem;
+  color: var(--dataviz-text-muted);
+  margin-bottom: 2rem;
+}
+
+.dataviz-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Back Link */
+.dataviz-back-link {
+  padding: 2rem;
+  text-align: center;
+}
+
+.dataviz-back-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dataviz-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .dataviz-hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .dataviz-hero-visual {
+    display: none;
+  }
+
+  .dataviz-hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .dataviz-hero-buttons {
+    justify-content: center;
+  }
+
+  .dataviz-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dataviz-kpis-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dataviz-charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dataviz-metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dataviz-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .dataviz-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dataviz-kpis-row,
+  .dataviz-metrics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dataviz-dash-controls {
+    display: none;
+  }
+
+  .dataviz-donut-wrapper {
+    flex-direction: column;
+  }
+
+  .dataviz-cta-buttons {
+    flex-direction: column;
+  }
+
+  .dataviz-arch-items {
+    flex-direction: column;
+    align-items: center;
+  }
+}

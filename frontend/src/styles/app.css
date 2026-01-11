@@ -1,0 +1,97 @@
+/* ============================================================================
+   APP LAYOUT STYLES
+   ============================================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app-main {
+  flex: 1;
+  position: relative;
+}
+
+/* Background Decorations */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-bg);
+  pointer-events: none;
+  z-index: -2;
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--primary-alpha) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+/* Skip to Content (Accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  z-index: 9999;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Loading State */
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Toast Customization */
+.react-hot-toast {
+  font-family: var(--font-primary);
+}
